@@ -7,7 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Contenu Page 1</h1>
+        <h1>Contenu Page 2</h1>
         <p>Test test </p>
     </body>
 </html>
