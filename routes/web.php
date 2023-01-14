@@ -21,11 +21,17 @@ Route::get('/', function () {
 //3rd First Touch Video Routing
 //Route::get("/page1",'PageController@afficherpage1'); => laravel7
 //=> laravel9
-Route::get("/page1", [App\Http\Controllers\PageController::class, 'afficherpage1']);
+// Route::get("/page1", [App\Http\Controllers\PageController::class, 'afficherpage1']);
+Route::get("/page1", [PageController::class, 'afficherpage1']);
+
 
 //4th First Controller Video Routing And Controller 
 //"/page2/afficher/test" or "/page2/afficher" or "/page2" or "/page2afficher" or "/about"
 // Route::get("/about",'PageController@afficherpage2'); => laravel7
 //=> laravel9
-Route::get("/about", [App\Http\Controllers\PageController::class, 'afficherpage2']);
+//Route::get("/about", [App\Http\Controllers\PageController::class, 'afficherpage2']);
+Route::get("/about", [PageController::class, 'afficherpage2']);
+
+//Route::get("/test", [PageController::class, 'afficherpage2']);
+
 
