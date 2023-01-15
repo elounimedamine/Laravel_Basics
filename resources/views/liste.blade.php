@@ -10,13 +10,19 @@
     <body>
         <div class="container p-3">
             <h1 class="text-center">Liste Des Catégories</h1>
+
+            @if($message = Session::get('msg'))
+            
+              <div class="alert alert-success">{{ $message }}</div>
+
+            @endif
             
             <!--pour afficher tous les noms et descriptions des catégories , categories est comme le nom de la variable entre '' et non pas l'autre-->
             @foreach($categories as $category)
 
               <h1>{{$category->name}}</h1>
               <p>{{$category->description}}</p>
-
+              <a class="btn btn-danger" href="/category/delete/{{ $category->id }}">Supprimer</a>
               <hr />
 
             @endforeach

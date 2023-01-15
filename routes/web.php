@@ -41,5 +41,8 @@ Route::get("/category/form", [CategoryController::class, 'ShowFormCategory']);
 
 Route::get("/category/list", [CategoryController::class, 'liste']);
 
+Route::get("/category/delete/{id}", [CategoryController::class, 'delete']);
+
+
 
 

@@ -43,7 +43,7 @@ class CategoryController extends Controller
         if($c->save()){
             // return 'Catégorie Ajoutée Avec Succès';
             // redirection vers la page qui contient toutes la liste des catégories
-            return redirect('/category/list');
+            return redirect('/category/list')->with('msg', 'Votre Catégorie Est Ajoutée Avec Succès');;
         }else{
             return 'Erreur d\'ajout de la Catégorie';
         }
@@ -60,4 +60,21 @@ class CategoryController extends Controller
         //retourner la page avec les catégories
         return view('liste')->with('categories', $categories);
     }
+
+    public function delete($id){
+
+        //récuperer la catégorie selon leur id, Category => Model, find => pour rechercher
+        $categorie = Category::find($id);
+
+        //supprimer la catégorie
+        if($categorie->delete()){
+            return redirect('/category/list')->with('msg', 'Votre Catégorie Est Supprimée Avec Succès');
+        }else{
+            return 'Erreur de suppression de la Catégorie';
+        }
+
+    }
+
+
+
 }
