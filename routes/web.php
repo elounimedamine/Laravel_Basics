@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,6 @@ Route::get("/page1", [PageController::class, 'afficherpage1']);
 Route::get("/about", [PageController::class, 'afficherpage2']);
 
 Route::get("/affichage/donnes", [PageController::class, 'donnes']);
+
+Route::get("/category/add", [CategoryController::class, 'AddCategory']);
 
