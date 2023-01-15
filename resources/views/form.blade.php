@@ -17,12 +17,21 @@
                 @csrf
                 <div class="form-group">
                     <label for=""> Nom du catégorie : </label>
-                    <input type="text" name="nom" class="form-control"/>
+                    <!--pour récuperer les données précédents, on écrit en value {{@old('nom')}}-->
+                    <input type="text" name="nom" class="form-control" value="{{@old('nom')}}"/>
+                    <!--error-->
+                    @error('nom')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for=""> Description de la catégorie : </label>
-                    <textarea name="description" class="form-control"></textarea>
+                    <textarea name="description" class="form-control">{{@old('description')}}</textarea>
+                    <!--error-->
+                    @error('description')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary">Ajouter</button>

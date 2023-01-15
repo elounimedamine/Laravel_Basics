@@ -15,6 +15,15 @@ class CategoryController extends Controller
     //permet d'ajouter les données dans la base
     //les données se trouvent dans Request
     public function AddCategory(Request $request){
+
+        //Request Validation(Controle de saisie)
+        $request->validate(
+            [
+                'nom' => 'required',
+                'description' => 'required'
+            ]
+        );
+
         //traitement d'ajout
         $c = new Category();
 
@@ -32,7 +41,9 @@ class CategoryController extends Controller
         //return va etre exécutée lorsque l'ajout est terminée avec succès
 
         if($c->save()){
-            return 'Catégorie Ajoutée Avec Succès';
+            // return 'Catégorie Ajoutée Avec Succès';
+            // redirection vers la page qui contient toutes la liste des catégories
+            return redirect('/category/list');
         }else{
             return 'Erreur d\'ajout de la Catégorie';
         }
