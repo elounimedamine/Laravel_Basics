@@ -36,3 +36,6 @@ Route::get("/affichage/donnes", [PageController::class, 'donnes']);
 
 Route::get("/category/add", [CategoryController::class, 'AddCategory']);
 
+Route::get("/category/form", [CategoryController::class, 'ShowFormCategory']);
+
+

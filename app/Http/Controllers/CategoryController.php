@@ -22,4 +22,8 @@ class CategoryController extends Controller
         return 'Catégorie Ajoutée Avec Succès';
     }
 
+    public function ShowFormCategory(){
+        return view('form');
+    }
+
 }
