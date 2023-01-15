@@ -34,7 +34,8 @@ Route::get("/about", [PageController::class, 'afficherpage2']);
 
 Route::get("/affichage/donnes", [PageController::class, 'donnes']);
 
-Route::get("/category/add", [CategoryController::class, 'AddCategory']);
+//changer la methode get => post
+Route::post("/category/add", [CategoryController::class, 'AddCategory']);
 
 Route::get("/category/form", [CategoryController::class, 'ShowFormCategory']);
 

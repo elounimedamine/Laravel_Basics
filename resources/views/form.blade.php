@@ -11,16 +11,18 @@
         <div class="container">
             <h1 class="text-center">Ajout d'une catégorie</h1>
             <hr />
-
-            <form action="">
+            <!--dans l'action on ajout le chemin de la page AddCategory avec la méthode POST-->
+            <form action="/category/add" method="POST">
+                <!--ajouter "@csrf" pour sécuriser le formulaire contre l'erreur 419 | PAGE EXPIRED-->
+                @csrf
                 <div class="form-group">
                     <label for=""> Nom du catégorie : </label>
-                    <input type="text" name="" class="form-control"/>
+                    <input type="text" name="nom" class="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <label for=""> Description de la catégorie : </label>
-                    <textarea name="" class="form-control"></textarea>
+                    <textarea name="description" class="form-control"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Ajouter</button>
