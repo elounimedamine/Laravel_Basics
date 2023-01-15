@@ -43,7 +43,7 @@ class CategoryController extends Controller
         if($c->save()){
             // return 'Catégorie Ajoutée Avec Succès';
             // redirection vers la page qui contient toutes la liste des catégories
-            return redirect('/category/list')->with('msg', 'Votre Catégorie Est Ajoutée Avec Succès');;
+            return redirect('/category/list')->with('msg', 'Votre Catégorie Est Ajoutée Avec Succès');
         }else{
             return 'Erreur d\'ajout de la Catégorie';
         }
