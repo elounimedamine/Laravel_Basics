@@ -39,4 +39,7 @@ Route::post("/category/add", [CategoryController::class, 'AddCategory']);
 
 Route::get("/category/form", [CategoryController::class, 'ShowFormCategory']);
 
+Route::get("/category/list", [CategoryController::class, 'liste']);
+
+
 

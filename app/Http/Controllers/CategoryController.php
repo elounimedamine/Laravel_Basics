@@ -39,6 +39,14 @@ class CategoryController extends Controller
 
     }
 
-    
+    //permet d'afficher la liste des catégories
+    public function liste(){
 
+        //récupération des données appartir de la base de données(Category est le model)
+        //$categories = Category::all(); pour récupérer tous les données de la base
+        $categories = Category::all();
+
+        //retourner la page avec les catégories
+        return view('liste')->with('categories', $categories);
+    }
 }
